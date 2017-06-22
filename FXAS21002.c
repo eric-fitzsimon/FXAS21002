@@ -43,7 +43,7 @@ uint8_t FXAS_GetUpdate(FXASDATA *dps)
         dps->xdps = (int16_t) ((rxbuf[1] << 8) | rxbuf[2]);
         dps->ydps = (int16_t) ((rxbuf[3] << 8) | rxbuf[4]);
         dps->zdps = (int16_t) ((rxbuf[5] << 8) | rxbuf[6]);
-        dps->xdps *= FXAS_2000DPS_LSB;
+        dps->xdps *= FXAS_2000DPS_LSB; //TODO: Implement config structure and process outside of update function
         dps->ydps *= FXAS_2000DPS_LSB;
         dps->zdps *= FXAS_2000DPS_LSB;
     }
